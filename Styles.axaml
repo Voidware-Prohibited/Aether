@@ -1,0 +1,80 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Design.PreviewWith>
+        <!-- Add Controls for Previewer Here -->
+    </Design.PreviewWith>
+
+    <Style Selector="TabControl">
+        <Setter Property="Margin" Value="0"></Setter>
+        <Setter Property="Padding" Value="0"></Setter>
+    </Style>
+    
+    <Style Selector="TabControl WrapPanel">
+        <Setter Property="Margin" Value="0"></Setter>
+    </Style>
+
+    <Style Selector="TabItem">
+        <Setter Property="Padding" Value="0"></Setter>
+        <Setter Property="Width" Value="115"></Setter>
+        <Setter Property="Margin" Value="2 6 2 0"/>
+        <Setter Property="BorderThickness" Value="2"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"></Setter>
+        <Setter Property="HorizontalContentAlignment" Value="Center"></Setter>
+        <Setter Property="BorderBrush" Value="LimeGreen"/>
+        <Setter Property="Background" Value="rgba(0, 0, 0, 128)"></Setter>
+        <Setter Property="Foreground" Value="LimeGreen"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="FontWeight" Value="DemiBold"></Setter>
+    </Style>
+    
+    <Style Selector="TabItem Border">
+        <Setter Property="Padding" Value="0"/>
+        <Setter Property="Margin" Value="0"/>
+        <Setter Property="BorderThickness" Value="4"/>
+        <Setter Property="BorderBrush" Value="Transparent"/>
+    </Style>
+    
+    <Style Selector="TabItem:not:selected">
+        <Setter Property="BorderBrush" Value="LimeGreen"/>
+        <Setter Property="Background" Value="rgba(0, 0, 0, 128)"></Setter>
+        <Setter Property="Foreground" Value="LimeGreen"/>
+    </Style>
+    
+    <Style Selector="TabItem TextBlock">
+        
+    </Style>
+    
+    <Style Selector="TabItem:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+        <Setter Property="Background" Value="GreenYellow"/>
+        <Setter Property="Foreground" Value="DarkGreen"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"></Setter>
+        <Setter Property="HorizontalContentAlignment" Value="Center"></Setter>
+    </Style>
+
+    <Style Selector="TabItem:focus">
+        <Setter Property="Background" Value="GreenYellow"/>
+        <Setter Property="Foreground" Value="DarkGreen"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"></Setter>
+        <Setter Property="HorizontalContentAlignment" Value="Center"></Setter>
+    </Style>
+    <Style Selector="TabItem:focus /template/ ContentPresenter#PART_ContentPresenter">
+        <Setter Property="Background" Value="GreenYellow"/>
+        <Setter Property="Foreground" Value="DarkGreen"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"></Setter>
+        <Setter Property="HorizontalContentAlignment" Value="Center"></Setter>
+    </Style>
+
+    <Style Selector="TabItem:selected">
+        <Setter Property="Foreground" Value="#000"/>
+        <Setter Property="Background" Value="Chartreuse"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"></Setter>
+        <Setter Property="HorizontalContentAlignment" Value="Center"></Setter>
+    </Style>
+    <Style Selector="TabItem:selected /template/ ContentPresenter#PART_ContentPresenter">
+        <Setter Property="Foreground" Value="#000"/>
+        <Setter Property="Background" Value="Chartreuse"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"></Setter>
+        <Setter Property="HorizontalContentAlignment" Value="Center"></Setter>
+    </Style>
+</Styles>

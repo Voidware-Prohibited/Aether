@@ -1,0 +1,181 @@
+<Window MinWidth="600" MinHeight="400"
+        xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:TargetVectorLauncher.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:views="clr-namespace:TargetVectorLauncher.Views"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="600"
+        x:Class="TargetVectorLauncher.Views.MainWindow"
+        x:DataType="vm:MainWindowViewModel"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="Target Vector Launcher"
+        TransparencyLevelHint="AcrylicBlur"
+        Background="Transparent"
+        ExtendClientAreaToDecorationsHint="True"
+        WindowStartupLocation="CenterScreen">
+
+    <Design.DataContext>
+        <!-- This only sets the DataContext for the previewer in an IDE,
+             to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
+        <vm:MainWindowViewModel/>
+    </Design.DataContext>
+    
+    <Window.Styles>
+        
+    </Window.Styles>
+
+    <Panel ClipToBounds="True" HorizontalAlignment="Stretch"  VerticalAlignment="Stretch"  Margin="0,0,0,0">
+        <ExperimentalAcrylicBorder IsHitTestVisible="False" CornerRadius="8" ClipToBounds="True">
+            <ExperimentalAcrylicBorder.Material>
+                <ExperimentalAcrylicMaterial
+                    BackgroundSource="Digger"
+                    TintColor="Black"
+                    TintOpacity="0.75"
+                    MaterialOpacity="0.05" />
+            </ExperimentalAcrylicBorder.Material>
+        </ExperimentalAcrylicBorder>
+        <!-- Background Image -->
+        <Panel IsHitTestVisible="False" Margin="8" ZIndex="-0">
+            <Image Source="../Assets/bg1.png" Stretch="UniformToFill" Margin="-8" StretchDirection="Both" Opacity="0.2" IsHitTestVisible="False">
+                <Image.Effect>
+                    <BlurEffect></BlurEffect>
+                </Image.Effect>
+            </Image>
+        </Panel>
+        
+        <!-- Single Column Rows -->
+        <Panel>
+        <Grid ColumnDefinitions="*" RowDefinitions="50,*,20"  Margin="0" HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" ClipToBounds="True">
+            <!-- Header Section -->
+            <Panel Grid.Column="0" Grid.RowSpan="2" Margin="0 33 0 0 " MinWidth="300"  Height="118" VerticalAlignment="Top" HorizontalAlignment="Left">
+                <Image Stretch="UniformToFill" HorizontalAlignment="Left" StretchDirection="Both" Source="../Assets/bg1.png" ZIndex="0" IsHitTestVisible="False">
+                </Image>
+                <Panel Margin="60 0 0 36">
+                    <views:HeaderCarousel ClipToBounds="True"/>
+                </Panel>
+            </Panel>
+
+            <Panel Grid.Row="0"> 
+                <!-- Top Menu -->
+                <Grid ColumnDefinitions="Auto, *, Auto" RowDefinitions="100"  Margin="0" HorizontalAlignment="Stretch"  VerticalAlignment="Stretch">
+                    <!-- Identity -->
+                    <Panel Grid.Row="0" Grid.Column="0">
+                        <Grid ColumnDefinitions="Auto, *, Auto" RowDefinitions="60">
+                            <Button Grid.Column="0" Margin="4 20 0 0" Height="50" Padding="0">
+                                <Image Height="46" Width="46" Source="../Assets/avalonia-logo.ico" Margin="0 8 0 8">
+                                    <ToolTip.Tip>
+                                        <StackPanel>
+                                            <TextBlock FontSize="16">Target Vector</TextBlock>
+                                            <TextBlock>Launcher and Updater</TextBlock>
+                                        </StackPanel>
+                                    </ToolTip.Tip>
+                                </Image>
+                                <Button.Flyout>
+                                    <MenuFlyout>
+                                        <MenuItem Header="_View">
+                                            <MenuItem Header="Normal Mode"/>
+                                            <MenuItem Header="Big Screen Mode"/>
+                                            <Separator/>
+                                            <MenuItem Header="Status Bar"/>
+                                            <MenuItem Header="Lock File Menu"/>
+                                            <Separator/>
+                                            <MenuItem Header="Maximize"/>
+                                            <MenuItem Header="Reduce"/>
+                                        </MenuItem>
+                                        <MenuItem Header="_Help">
+                                            <MenuItem Header="Help Topics"/>
+                                            <MenuItem Click="ShowAboutWindow" Header="About"/>
+                                        </MenuItem>
+                                        <Separator/>
+                                        <MenuItem Click="ShowPreferencesWindow" Header="_Preferences"/>
+                                        <MenuItem Header="_Exit"/>
+                                    </MenuFlyout>
+                                </Button.Flyout>
+                            </Button>
+                            
+                        </Grid>
+                    </Panel>
+                    <!-- Profile -->
+                    <Panel Grid.Column="2" Grid.Row="0" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="{OnPlatform '0, 0, 0, 0', Windows='0, 0, 150, 0', Linux='0, 0, 150, 0'}">
+                        <Grid ColumnDefinitions="10,10,Auto,Auto" RowDefinitions="Auto">
+                            <Button Grid.Column="0" Height="18" Width="18" Margin="0 10 12 0" Padding="0" VerticalAlignment="Top" >
+                                <PathIcon Grid.Column="0" Height="18" Width="18" Data="{StaticResource alert_regular}" />
+                            </Button>
+                            <Button Grid.Column="1" Height="18" Width="18" Margin="0 10 12 0" Padding="0" VerticalAlignment="Top" >
+                                <PathIcon Grid.Column="0" Height="18" Width="18" Data="{StaticResource mail_regular}" />
+                            </Button>
+                            <Panel Grid.Column="2">
+                                <Button>
+                                    <Panel>
+                                        <Border CornerRadius="62" ClipToBounds="True" Margin="-6 -2 -6 0">
+                                            <Image Height="28" Width="28" Source="../Assets/user.jpg"></Image>
+                                        </Border>
+                                    </Panel>
+                                    <Button.Flyout>
+                                        <MenuFlyout>
+                                            <MenuItem Header="xXx_l337n00b_xXx69420"/>
+                                            <Separator/>
+                                            <MenuItem Header="xXx_d3m0nsl4y3r777_xXx"/>
+                                            <MenuItem Header="_Switch Account"/>
+                                            <MenuItem Header="Manage Accounts"/>
+                                            <Separator/>
+                                            <MenuItem Header="_Log Out"/>
+                                        </MenuFlyout>
+                                    </Button.Flyout>
+                                </Button>
+                            </Panel>
+                        </Grid>
+                    </Panel>
+                </Grid>
+            </Panel>
+            
+            <!-- Tab Menu -->
+            <Panel Margin="32 55 32 0" Grid.Row="1" ZIndex="3">
+                <Panel>
+                    <TabControl Margin="0" SelectedIndex="0" Padding="0">
+                        <TabItem Header="./">
+                            <views:Updates ClipToBounds="True"/>
+                        </TabItem>
+                        <TabItem Header="./PLAY">
+                            <views:Play ClipToBounds="True"/>
+                        </TabItem>
+                        <TabItem Header="./USR">
+                            <views:Profile ClipToBounds="True"/>
+                        </TabItem>
+                        <TabItem Header="./MRKT">
+                            <views:PlayDaily ClipToBounds="True"/>
+                        </TabItem>
+                        <TabItem Header="./DLC">
+                            <views:DLC ClipToBounds="True"/>
+                        </TabItem>
+                        <TabItem Header="./CFG">
+                            <views:Settings ClipToBounds="True"/>
+                        </TabItem>
+                    </TabControl>
+                </Panel>
+                <Panel Height="16" MaxWidth="150" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0 0 6 6 ">
+                    <Border Background="rgba(0, 0, 0, .8)"  CornerRadius="3" ClipToBounds="True" BorderThickness="1" BorderBrush="rgba(0, 0, 0, 128)" Padding="4 0 4 4">
+                        <Grid ColumnDefinitions="1*,1*,1*" RowDefinitions="Auto,Auto,Auto"  Margin="4">
+                            <TextBlock LineHeight="10" Padding="0" Margin="0" Height="8" FontSize="11" VerticalAlignment="Bottom" Grid.Row="0" Grid.Column="0">100%</TextBlock>
+                            <TextBlock LineHeight="10" Padding="0" Margin="0" Height="8" FontSize="11" VerticalAlignment="Bottom" Grid.Row="0" Grid.Column="0">88888 / 99999</TextBlock>
+                            <TextBlock LineHeight="10" Padding="0" Margin="0" Height="8" FontSize="11" VerticalAlignment="Bottom" Grid.Row="0" Grid.Column="1">Servers</TextBlock>
+                            <TextBlock LineHeight="10" Padding="0" Margin="0" Height="8" FontSize="11" VerticalAlignment="Bottom" Grid.Row="0" Grid.Column="2">Players Online</TextBlock>
+                        </Grid>
+                    </Border>
+                </Panel>
+            </Panel>
+            
+            <!-- Notification Panel -->
+            <Panel Grid.Row="3">
+                <Border Background="rgba(255, 0, 0, 1)"  ClipToBounds="True" BorderThickness="1" BorderBrush="rgba(255, 255, 0, 1)" Padding="4 0 4 4">
+                    <TextBlock LineHeight="10" Padding="0" Margin="0" Height="8" FontSize="11" VerticalAlignment="Bottom" Grid.Row="0" Grid.Column="0">1111</TextBlock>
+                </Border>
+            </Panel>
+            
+        </Grid>
+        
+    </Panel>
+    </Panel>
+    
+</Window>

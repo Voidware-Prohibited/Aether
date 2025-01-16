@@ -1,0 +1,106 @@
+<Window Width="480" Height="720"
+        xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="720"
+        x:Class="TargetVectorLauncher.Views.About"
+        Title="About"
+        TransparencyLevelHint="AcrylicBlur"
+        Background="Transparent"
+        ExtendClientAreaToDecorationsHint="True"
+        CanResize="False"
+        WindowStartupLocation="CenterOwner">
+        <Panel ClipToBounds="True" HorizontalAlignment="Stretch"  VerticalAlignment="Stretch"  Margin="0,0,0,0">
+            <ExperimentalAcrylicBorder IsHitTestVisible="False" CornerRadius="8" ClipToBounds="True">
+                <ExperimentalAcrylicBorder.Material>
+                    <ExperimentalAcrylicMaterial
+                        BackgroundSource="Digger"
+                        TintColor="Black"
+                        TintOpacity="0.75"
+                        MaterialOpacity="0.05" />
+                </ExperimentalAcrylicBorder.Material>
+            </ExperimentalAcrylicBorder>
+            <!-- Background Image -->
+            <Panel IsHitTestVisible="False" Margin="8" ZIndex="-0">
+                <!--<Image Source="../Assets/bg1.png" Stretch="UniformToFill" Margin="-8" StretchDirection="Both" Opacity="0.2" IsHitTestVisible="False">
+                    <Image.Effect>
+                        <BlurEffect></BlurEffect>
+                    </Image.Effect>
+                </Image>-->
+            </Panel>
+            <!-- Single Column Rows -->
+            <Grid ColumnDefinitions="*" RowDefinitions="300,*,50"  Margin="8 22 8 8">
+                
+                <Panel Grid.Row="0">
+                    <Panel>
+                        <Grid ColumnDefinitions="72,72, *, 72,72"  RowDefinitions="72" Margin="8 8 8  0">
+                            <Rectangle Grid.Column="0" Fill="Magenta" Margin="0 0 8 0"></Rectangle>
+                            <Rectangle Grid.Column="1" Fill="Magenta"></Rectangle>
+                            <Rectangle Grid.Column="3" Fill="Magenta" Margin="0 0 8 0"></Rectangle>
+                            <Rectangle Grid.Column="4" Fill="Magenta"></Rectangle>
+                        </Grid>
+                        <StackPanel Grid.Row="1" VerticalAlignment="Top" Margin="0 50 0 0">
+                            <Image Height="150" Width="150" Source="../Assets/avalonia-logo.ico"/>
+                            <TextBlock HorizontalAlignment="Center">
+                                Target Vector Installer
+                            </TextBlock>
+                            <TextBlock HorizontalAlignment="Center">
+                                v 0.0. alpha
+                            </TextBlock>
+                        </StackPanel>
+                    </Panel>
+                </Panel>
+                
+                <ScrollViewer Grid.Row="1" HorizontalAlignment="Stretch"  VerticalAlignment="Stretch">
+                    <StackPanel Grid.Row="2" VerticalAlignment="Center">
+                        <ProgressBar Value="50" Margin="0 0 0 50"></ProgressBar>
+                        <TextBlock HorizontalAlignment="Center">
+                            Loading
+                        </TextBlock>
+                        <ProgressBar Value="50" Margin="0 0 0 50"></ProgressBar>
+                        <TextBlock HorizontalAlignment="Center">
+                            Loading
+                        </TextBlock>
+                        <ProgressBar Value="50" Margin="0 0 0 50"></ProgressBar>
+                        <TextBlock HorizontalAlignment="Center">
+                            Loading
+                        </TextBlock>
+                        <ProgressBar Value="50" Margin="0 0 0 50"></ProgressBar>
+                        <TextBlock HorizontalAlignment="Center">
+                            Loading
+                        </TextBlock>
+                        <ProgressBar Value="50" Margin="0 0 0 50"></ProgressBar>
+                        <TextBlock HorizontalAlignment="Center">
+                            Loading
+                        </TextBlock>
+                        <ProgressBar Value="50" Margin="0 0 0 50"></ProgressBar>
+                        <TextBlock HorizontalAlignment="Center">
+                            Loading
+                        </TextBlock>
+                        <ProgressBar Value="50" Margin="0 0 0 50"></ProgressBar>
+                        <TextBlock HorizontalAlignment="Center">
+                            Loading
+                        </TextBlock>
+                    </StackPanel>
+                </ScrollViewer>
+                <Grid Grid.Row="2" ColumnDefinitions="Auto, *, Auto" VerticalAlignment="Bottom">
+                    <Button Grid.Column="0" HorizontalAlignment="Center" FontSize="10">
+                        <TextBlock HorizontalAlignment="Center" FontSize="10">
+                            Help Topics
+                        </TextBlock>
+                    </Button>
+                    <Button Grid.Column="1" HorizontalAlignment="Center" FontSize="10">
+                        <TextBlock HorizontalAlignment="Center" FontSize="10">
+                            Notices
+                        </TextBlock>
+                    </Button>
+                    <Button Click="Close" Grid.Column="2" HorizontalAlignment="Center" FontSize="10">
+                        <TextBlock HorizontalAlignment="Center" FontSize="10">
+                            Close
+                        </TextBlock>
+                    </Button>
+                </Grid>
+            </Grid>
+        </Panel>
+</Window>

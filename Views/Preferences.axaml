@@ -1,0 +1,78 @@
+<Window Width="720" Height="720"
+        xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:views="clr-namespace:TargetVectorLauncher.Views"
+        mc:Ignorable="d" d:DesignWidth="720" d:DesignHeight="720"
+        x:Class="TargetVectorLauncher.Views.Preferences"
+        Title="Preferences"
+        TransparencyLevelHint="AcrylicBlur"
+        Background="Transparent"
+        ExtendClientAreaToDecorationsHint="True"
+        CanResize="False"
+        WindowStartupLocation="CenterOwner">
+    <Panel ClipToBounds="True" HorizontalAlignment="Stretch"  VerticalAlignment="Stretch"  Margin="0,0,0,0">
+            <ExperimentalAcrylicBorder IsHitTestVisible="False" CornerRadius="8" ClipToBounds="True">
+                <ExperimentalAcrylicBorder.Material>
+                    <ExperimentalAcrylicMaterial
+                        BackgroundSource="Digger"
+                        TintColor="Black"
+                        TintOpacity="0.75"
+                        MaterialOpacity="0.05" />
+                </ExperimentalAcrylicBorder.Material>
+            </ExperimentalAcrylicBorder>
+            <!-- Background Image -->
+            <Panel IsHitTestVisible="False" Margin="8" ZIndex="-0">
+                <!--<Image Source="../Assets/bg1.png" Stretch="UniformToFill" Margin="-8" StretchDirection="Both" Opacity="0.2" IsHitTestVisible="False">
+                    <Image.Effect>
+                        <BlurEffect></BlurEffect>
+                    </Image.Effect>
+                </Image>-->
+            </Panel>
+            <!-- Single Column Rows -->
+            <Grid ColumnDefinitions="*" RowDefinitions="30,*,36"  Margin="8 0 8 8">
+                
+                <Panel Grid.Row="0">
+                    <Panel HorizontalAlignment="Center">
+                        <TextBlock IsHitTestVisible="False">Settings</TextBlock>
+                    </Panel>
+                </Panel>
+                
+                <Panel Grid.Row="1">
+                    <TabControl Margin="0" SelectedIndex="0" TabStripPlacement="Left">
+                        <TabItem Header="./">
+                            <views:PlayDaily ClipToBounds="True"/>
+                        </TabItem>
+                        <TabItem Header="AUDIO">
+                            <views:PlayCampaign ClipToBounds="True"/>
+                        </TabItem>
+                        <TabItem Header="VIDEO">
+                            <views:PlayMultiplayer ClipToBounds="True"/>
+                        </TabItem>
+                    </TabControl>
+                </Panel>
+                
+                
+                <Grid Grid.Row="2" ColumnDefinitions="Auto, *, Auto" VerticalAlignment="Bottom">
+                    <Button Grid.Column="0" HorizontalAlignment="Center" FontSize="10">
+                        <TextBlock HorizontalAlignment="Center" FontSize="10">
+                            Reset to Defaults
+                        </TextBlock>
+                    </Button>
+                    <WrapPanel Grid.Column="2">
+                        <Button Click="Close" Grid.Column="2" HorizontalAlignment="Center" FontSize="10">
+                            <TextBlock HorizontalAlignment="Center" FontSize="10">
+                                Close
+                            </TextBlock>
+                        </Button>
+                        <Button Click="Close" Grid.Column="2" HorizontalAlignment="Center" FontSize="10">
+                            <TextBlock HorizontalAlignment="Center" FontSize="10">
+                                Close
+                            </TextBlock>
+                        </Button>
+                    </WrapPanel>
+                </Grid>
+            </Grid>
+        </Panel>
+</Window>
