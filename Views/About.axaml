@@ -30,7 +30,7 @@
                 </Image>-->
             </Panel>
             <!-- Single Column Rows -->
-            <Grid ColumnDefinitions="*" RowDefinitions="300,*,50"  Margin="8 22 8 8">
+            <Grid ColumnDefinitions="*" RowDefinitions="300,*,Auto, 50"  Margin="8 22 8 8">
                 
                 <Panel Grid.Row="0">
                     <Panel>
@@ -48,43 +48,42 @@
                             <TextBlock HorizontalAlignment="Center">
                                 v 0.0. alpha
                             </TextBlock>
+                            <Button HorizontalAlignment="Center" Margin="0 8 0 0">
+                                <TextBlock>
+                                    Update Launcher
+                                </TextBlock>
+                            </Button>
                         </StackPanel>
                     </Panel>
                 </Panel>
                 
                 <ScrollViewer Grid.Row="1" HorizontalAlignment="Stretch"  VerticalAlignment="Stretch">
                     <StackPanel Grid.Row="2" VerticalAlignment="Center">
-                        <ProgressBar Value="50" Margin="0 0 0 50"></ProgressBar>
-                        <TextBlock HorizontalAlignment="Center">
-                            Loading
+                        <TextBlock HorizontalAlignment="Left" TextWrapping="WrapWithOverflow">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur lectus neque, dignissim nec finibus ac, interdum quis diam. In euismod ornare scelerisque. Quisque tincidunt tortor in velit sodales, a condimentum tellus lacinia. Fusce placerat quis ligula in bibendum. Etiam eu dolor non arcu ultrices lacinia ac dignissim dolor. Mauris eget mauris sed lectus luctus ornare. Sed scelerisque nibh quis varius porta. Phasellus non sem gravida, rhoncus lacus a, euismod lectus. Cras dignissim accumsan magna et condimentum. Sed justo felis, volutpat in urna sed, viverra varius diam. Morbi vitae malesuada lorem. In hac habitasse platea dictumst. Vivamus venenatis, odio vel laoreet aliquet, quam ipsum efficitur sem, imperdiet pellentesque nisi diam a sapien. Etiam ac condimentum risus. Aliquam dignissim viverra ipsum id consequat.
                         </TextBlock>
-                        <ProgressBar Value="50" Margin="0 0 0 50"></ProgressBar>
-                        <TextBlock HorizontalAlignment="Center">
-                            Loading
+                        <TextBlock HorizontalAlignment="Left" TextWrapping="WrapWithOverflow">
+                            Cras condimentum a nunc et mattis. Sed in dolor nisi. Morbi commodo nulla quis ex sollicitudin facilisis. Duis eget finibus tortor, vel vehicula nisi. Maecenas nulla quam, tempor pretium luctus ut, tempor id est. Suspendisse lorem purus, congue vitae mollis eget, sollicitudin eget dolor. Aliquam erat volutpat. Integer non urna tristique, vulputate urna in, aliquet arcu. Sed tristique sapien in placerat egestas. Morbi pretium facilisis augue non lacinia. Aliquam a volutpat libero. 
                         </TextBlock>
-                        <ProgressBar Value="50" Margin="0 0 0 50"></ProgressBar>
-                        <TextBlock HorizontalAlignment="Center">
-                            Loading
+                        <TextBlock HorizontalAlignment="Left" TextWrapping="WrapWithOverflow">
+                            Vestibulum finibus vitae nisl lobortis volutpat. Maecenas mi erat, tincidunt in metus et, interdum rhoncus nisi. Maecenas malesuada semper sapien, ut tristique elit varius eu. Quisque dignissim lectus vel lacus malesuada venenatis. Curabitur vel nisi aliquet, mollis ex ut, sagittis justo. Fusce eget odio lacus. Aliquam dictum urna quis sodales malesuada. 
                         </TextBlock>
-                        <ProgressBar Value="50" Margin="0 0 0 50"></ProgressBar>
-                        <TextBlock HorizontalAlignment="Center">
-                            Loading
+                        <TextBlock HorizontalAlignment="Left" TextWrapping="WrapWithOverflow">
+                            Curabitur euismod, erat ut placerat dapibus, ligula purus viverra nibh, vitae posuere felis lectus sit amet augue. Morbi sollicitudin velit vel hendrerit consequat. Nullam interdum, odio a interdum porttitor, erat nunc iaculis sapien, quis sodales odio risus ut purus. Duis vel cursus justo. Integer ipsum libero, pharetra et placerat a, ultricies eget velit. Maecenas nec eros porta, imperdiet nulla ac, sollicitudin massa. Maecenas et iaculis leo. Maecenas commodo neque eget purus pretium bibendum. Nullam aliquam interdum felis vel egestas. Sed congue odio a maximus aliquet. Mauris scelerisque neque nec vulputate faucibus. Vestibulum quam eros, sodales sed commodo in, dapibus nec elit. Integer pretium laoreet risus nec bibendum. Nulla facilisi. 
                         </TextBlock>
-                        <ProgressBar Value="50" Margin="0 0 0 50"></ProgressBar>
-                        <TextBlock HorizontalAlignment="Center">
-                            Loading
-                        </TextBlock>
-                        <ProgressBar Value="50" Margin="0 0 0 50"></ProgressBar>
-                        <TextBlock HorizontalAlignment="Center">
-                            Loading
-                        </TextBlock>
-                        <ProgressBar Value="50" Margin="0 0 0 50"></ProgressBar>
-                        <TextBlock HorizontalAlignment="Center">
-                            Loading
+                        <TextBlock HorizontalAlignment="Left" TextWrapping="WrapWithOverflow">
+                            Fusce efficitur nisi sapien, nec suscipit orci molestie eget. Nulla vel justo vehicula, egestas dui sit amet, iaculis metus. Sed a rutrum risus. Nulla facilisi. In malesuada arcu id augue vestibulum ultricies. Nam auctor placerat ante, vel commodo nibh hendrerit in. Suspendisse sed posuere nulla. Pellentesque vitae augue aliquet, pretium massa sit amet, dignissim lectus. Fusce ac tristique lectus. Suspendisse sit amet libero ligula. Mauris interdum scelerisque mauris malesuada tincidunt. Donec nec lectus in augue ornare tristique at eget turpis. Cras pharetra dictum dolor eu fringilla. Cras vestibulum augue ac libero placerat, sed dapibus odio sagittis. 
                         </TextBlock>
                     </StackPanel>
                 </ScrollViewer>
-                <Grid Grid.Row="2" ColumnDefinitions="Auto, *, Auto" VerticalAlignment="Bottom">
+                
+                <StackPanel Grid.Row="2">
+                    <TextBlock HorizontalAlignment="Left">
+                        Credits
+                    </TextBlock>
+                </StackPanel>
+                
+                <Grid Grid.Row="3" ColumnDefinitions="Auto, *, Auto" VerticalAlignment="Bottom">
                     <Button Grid.Column="0" HorizontalAlignment="Center" FontSize="10">
                         <TextBlock HorizontalAlignment="Center" FontSize="10">
                             Help Topics

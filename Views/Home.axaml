@@ -1,0 +1,24 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:views="clr-namespace:TargetVectorLauncher.Views"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="TargetVectorLauncher.Views.Home">
+    <Panel>
+        <TabControl Margin="0" SelectedIndex="0" TabStripPlacement="Left" Padding="24 0 0 0">
+            <TabItem Header="HOME" Height="10" VerticalAlignment="Top">
+                <views:Landing ClipToBounds="True"/>
+            </TabItem>
+            <TabItem Header="UPDATES" VerticalContentAlignment="Center">
+                <views:Updates ClipToBounds="True"/>
+            </TabItem>
+            <TabItem Header="NEWS" VerticalContentAlignment="Center">
+                <views:News ClipToBounds="True"/>
+            </TabItem>
+            <TabItem Header="DOWNLOADS" VerticalAlignment="Bottom">
+                <views:Downloads ClipToBounds="True"/>
+            </TabItem>
+        </TabControl>
+    </Panel>
+</UserControl>

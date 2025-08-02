@@ -2,7 +2,29 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             xmlns:views="clr-namespace:TargetVectorLauncher.Views"
+             mc:Ignorable="d" d:DesignWidth="850" d:DesignHeight="450"
              x:Class="TargetVectorLauncher.Views.PlayMultiplayer">
-    Play Multiplayer
+    <Panel>
+        <TabControl SelectedIndex="0" VerticalContentAlignment="Top">
+            <TabItem Header="QUICK MATCH">
+                <TextBlock>2</TextBlock>
+            </TabItem>
+            <TabItem Header="BROWSER">
+                <TextBlock>2</TextBlock>
+            </TabItem>
+            <TabItem Header="FAVORITES">
+                <TextBlock>4</TextBlock>
+            </TabItem>
+            <TabItem Header="RECENT">
+                <TextBlock>5</TextBlock>
+            </TabItem>
+            <TabItem Header="FRIENDS">
+                <TextBlock>5</TextBlock>
+            </TabItem>
+            <TabItem Header="HOST">
+                <TextBlock>5</TextBlock>
+            </TabItem>
+        </TabControl>
+    </Panel>
 </UserControl>

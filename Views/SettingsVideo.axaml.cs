@@ -1,12 +1,12 @@
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
-using static TargetVectorLauncher.Views.PlayMultiplayerAll;
+
 namespace TargetVectorLauncher.Views;
 
-public partial class PlayMultiplayer : UserControl
+public partial class SettingsVideo : UserControl
 {
-    public PlayMultiplayer()
+    public SettingsVideo()
     {
         InitializeComponent();
     }

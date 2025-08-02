@@ -33,10 +33,10 @@
         <!-- Single Column Rows -->
         <Grid ColumnDefinitions="*" RowDefinitions="100,*,50*,20"  Margin="0" HorizontalAlignment="Stretch"  VerticalAlignment="Stretch">
             <Panel Grid.Row="0">
-                <Grid ColumnDefinitions="72,72, *, 72,72" Margin="8 8 8  0">
+                <Grid ColumnDefinitions="72,72,72, *, 72" Margin="8 8 8  0">
                     <Rectangle Grid.Column="0" Fill="Magenta" Margin="0 0 8 0"></Rectangle>
                     <Rectangle Grid.Column="1" Fill="Magenta"></Rectangle>
-                    <Rectangle Grid.Column="3" Fill="Magenta" Margin="0 0 8 0"></Rectangle>
+                    <Rectangle Grid.Column="2" Fill="Magenta" Margin="0 0 8 0"></Rectangle>
                     <Rectangle Grid.Column="4" Fill="Magenta"></Rectangle>
                 </Grid>
             </Panel>
@@ -51,7 +51,7 @@
             </StackPanel>
             <Panel Grid.Row="3" VerticalAlignment="Bottom">
                 <TextBlock HorizontalAlignment="Center" FontSize="10">
-                    Copyright Corpo Corp© MMMM  All Rights Reserved
+                    Loading Detail
                 </TextBlock>
             </Panel>
         </Grid>

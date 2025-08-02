@@ -6,21 +6,18 @@
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="TargetVectorLauncher.Views.Settings">
     <Panel>
-        <TabControl Margin="0" SelectedIndex="0">
-            <TabItem Header="./">
-                <views:PlayDaily ClipToBounds="True"/>
+        <TabControl Margin="0" SelectedIndex="0" TabStripPlacement="Left">
+            <TabItem Header="GENERAL">
+                <views:SettingsGeneral ClipToBounds="True"/>
             </TabItem>
-            <TabItem Header="./AUD">
-                <views:PlayCampaign ClipToBounds="True"/>
+            <TabItem Header="AUDIO">
+                <views:SettingsAudio ClipToBounds="True"/>
             </TabItem>
-            <TabItem Header="./VID">
-                <views:PlayMultiplayer ClipToBounds="True"/>
+            <TabItem Header="VIDEO">
+                <views:SettingsVideo ClipToBounds="True"/>
             </TabItem>
-            <TabItem Header="./KEY">
-                <views:PlayMultiplayer ClipToBounds="True"/>
-            </TabItem>
-            <TabItem Header="./ETC">
-                <views:PlayMultiplayer ClipToBounds="True"/>
+            <TabItem Header="KEYBINDS">
+                <views:SettingsKeybinds ClipToBounds="True"/>
             </TabItem>
         </TabControl>
     </Panel>

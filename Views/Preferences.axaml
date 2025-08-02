@@ -31,7 +31,7 @@
                 </Image>-->
             </Panel>
             <!-- Single Column Rows -->
-            <Grid ColumnDefinitions="*" RowDefinitions="30,*,36"  Margin="8 0 8 8">
+            <Grid ColumnDefinitions="*" RowDefinitions="30,*,36"  Margin="8 4 8 8">
                 
                 <Panel Grid.Row="0">
                     <Panel HorizontalAlignment="Center">
@@ -41,14 +41,11 @@
                 
                 <Panel Grid.Row="1">
                     <TabControl Margin="0" SelectedIndex="0" TabStripPlacement="Left">
-                        <TabItem Header="./">
-                            <views:PlayDaily ClipToBounds="True"/>
+                        <TabItem Header="GENERAL">
+                            <views:PreferencesGeneral ClipToBounds="True"/>
                         </TabItem>
-                        <TabItem Header="AUDIO">
-                            <views:PlayCampaign ClipToBounds="True"/>
-                        </TabItem>
-                        <TabItem Header="VIDEO">
-                            <views:PlayMultiplayer ClipToBounds="True"/>
+                        <TabItem Header="ADVANCED">
+                            <views:PreferencesAdvanced ClipToBounds="True"/>
                         </TabItem>
                     </TabControl>
                 </Panel>

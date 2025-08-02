@@ -5,23 +5,5 @@
              xmlns:views="clr-namespace:TargetVectorLauncher.Views"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="TargetVectorLauncher.Views.Updates">
-    <Panel>
-        <TabControl Margin="0" SelectedIndex="0">
-            <TabItem Header="./" Height="10" VerticalAlignment="Top">
-                <views:PlayDaily ClipToBounds="True"/>
-            </TabItem>
-            <TabItem Header="./UPD" VerticalContentAlignment="Center">
-                <views:PlayCampaign ClipToBounds="True"/>
-            </TabItem>
-            <TabItem Header="./NFO" VerticalContentAlignment="Center">
-                <views:PlayMultiplayer ClipToBounds="True"/>
-            </TabItem>
-            <TabItem Header="./NET" VerticalContentAlignment="Center">
-                <views:PlayMultiplayer ClipToBounds="True"/>
-            </TabItem>
-            <TabItem Header="./TASKS" VerticalAlignment="Bottom">
-                <views:PlayMultiplayer ClipToBounds="True"/>
-            </TabItem>
-        </TabControl>
-    </Panel>
+    Updates
 </UserControl>

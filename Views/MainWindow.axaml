@@ -1,11 +1,11 @@
-<Window MinWidth="600" MinHeight="400"
+<Window MinWidth="900" MinHeight="400"
         xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:vm="using:TargetVectorLauncher.ViewModels"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:views="clr-namespace:TargetVectorLauncher.Views"
-        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="600"
+        mc:Ignorable="d" d:DesignWidth="900" d:DesignHeight="600"
         x:Class="TargetVectorLauncher.Views.MainWindow"
         x:DataType="vm:MainWindowViewModel"
         Icon="/Assets/avalonia-logo.ico"
@@ -83,12 +83,10 @@
                                             <MenuItem Header="Maximize"/>
                                             <MenuItem Header="Reduce"/>
                                         </MenuItem>
-                                        <MenuItem Header="_Help">
-                                            <MenuItem Header="Help Topics"/>
-                                            <MenuItem Click="ShowAboutWindow" Header="About"/>
-                                        </MenuItem>
-                                        <Separator/>
                                         <MenuItem Click="ShowPreferencesWindow" Header="_Preferences"/>
+                                        <MenuItem Header="Help"/>
+                                        <Separator/>
+                                        <MenuItem Click="ShowAboutWindow" Header="About"/>
                                         <MenuItem Header="_Exit"/>
                                     </MenuFlyout>
                                 </Button.Flyout>
@@ -131,49 +129,86 @@
             </Panel>
             
             <!-- Tab Menu -->
-            <Panel Margin="32 55 32 0" Grid.Row="1" ZIndex="3">
-                <Panel>
+            <Panel Margin="32 55 0 0" Grid.Row="1" ZIndex="3">
+                <Panel Margin="0 0 32 0">
                     <TabControl Margin="0" SelectedIndex="0" Padding="0">
-                        <TabItem Header="./">
-                            <views:Updates ClipToBounds="True"/>
+                        <TabItem Header="HOME">
+                            <views:Home ClipToBounds="True"/>
                         </TabItem>
-                        <TabItem Header="./PLAY">
-                            <views:Play ClipToBounds="True"/>
+                        <TabItem Header="CONTINUE">
+                            <views:PlayCampaign ClipToBounds="True"/>
                         </TabItem>
-                        <TabItem Header="./USR">
+                        <TabItem Header="MULTIPLAYER">
+                            <views:PlayMultiplayer ClipToBounds="True"/>
+                        </TabItem>
+                        <TabItem Header="PROFILE">
                             <views:Profile ClipToBounds="True"/>
                         </TabItem>
-                        <TabItem Header="./MRKT">
-                            <views:PlayDaily ClipToBounds="True"/>
+                        <TabItem Header="COMMUNITY">
+                            <views:Community ClipToBounds="True"/>
                         </TabItem>
-                        <TabItem Header="./DLC">
+                        <TabItem Header="DLC">
                             <views:DLC ClipToBounds="True"/>
                         </TabItem>
-                        <TabItem Header="./CFG">
+                        <TabItem Header="SETTINGS">
                             <views:Settings ClipToBounds="True"/>
                         </TabItem>
                     </TabControl>
                 </Panel>
-                <Panel Height="16" MaxWidth="150" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0 0 6 6 ">
-                    <Border Background="rgba(0, 0, 0, .8)"  CornerRadius="3" ClipToBounds="True" BorderThickness="1" BorderBrush="rgba(0, 0, 0, 128)" Padding="4 0 4 4">
-                        <Grid ColumnDefinitions="1*,1*,1*" RowDefinitions="Auto,Auto,Auto"  Margin="4">
-                            <TextBlock LineHeight="10" Padding="0" Margin="0" Height="8" FontSize="11" VerticalAlignment="Bottom" Grid.Row="0" Grid.Column="0">100%</TextBlock>
-                            <TextBlock LineHeight="10" Padding="0" Margin="0" Height="8" FontSize="11" VerticalAlignment="Bottom" Grid.Row="0" Grid.Column="0">88888 / 99999</TextBlock>
-                            <TextBlock LineHeight="10" Padding="0" Margin="0" Height="8" FontSize="11" VerticalAlignment="Bottom" Grid.Row="0" Grid.Column="1">Servers</TextBlock>
-                            <TextBlock LineHeight="10" Padding="0" Margin="0" Height="8" FontSize="11" VerticalAlignment="Bottom" Grid.Row="0" Grid.Column="2">Players Online</TextBlock>
-                        </Grid>
+                
+                    <Panel MaxHeight="50" MaxWidth="700" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0 0 6 3 ">
+                    <Border Background="rgba(0, 0, 0, .8)"  CornerRadius="3" ClipToBounds="True" BorderThickness="1" BorderBrush="rgba(0, 0, 0, 128)" Padding="2">
+                        <StackPanel Orientation="Vertical">
+                            <StackPanel Orientation="Horizontal">
+                                <PathIcon Height="12" Width="12" Margin="0 0 4 0" VerticalAlignment="Center" Data="{StaticResource arrow_download_regular}" />
+                                <TextBlock Padding="0" Margin="0 0 6 0" FontSize="12" VerticalAlignment="Center" >Downloading</TextBlock>
+                                <PathIcon Height="12" Width="12" Margin="0 0 4 0" VerticalAlignment="Center" Data="{StaticResource tabs_regular}" />
+                                <TextBlock Padding="0" Margin="0 0 6 0" FontSize="12" VerticalAlignment="Center" >88888 / 99999</TextBlock>
+                                <PathIcon Height="12" Width="12" Margin="0 0 4 0" VerticalAlignment="Center" Data="{StaticResource cloud_regular}" />
+                                <TextBlock Padding="0" Margin="0 0 6 0" FontSize="12" VerticalAlignment="Center">88888</TextBlock>
+                                <PathIcon Height="12" Width="12" Margin="0 0 4 0" VerticalAlignment="Center" Data="{StaticResource people_regular}" />
+                                <TextBlock Padding="0" Margin="0 0 6 0" FontSize="12" VerticalAlignment="Center">88888</TextBlock>
+                            </StackPanel>
+                            <ProgressBar Margin="0 4 0 1" Foreground="DodgerBlue" Background="#444444" Height="4" Value="50"></ProgressBar>
+                            <ProgressBar Margin="0 2 0 0" Foreground="LimeGreen" Background="#444444" Height="4" Value="75"></ProgressBar>
+                        </StackPanel>
                     </Border>
                 </Panel>
             </Panel>
             
+            <Panel Grid.Row="1" MaxHeight="80" MaxWidth="700" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="6 0 0 3 " ZIndex="999">
+                <SplitButton Padding="0 1" Background="YellowGreen" BorderThickness="2" CornerRadius="0" Foreground="Black" Margin="0" >
+                    <StackPanel Margin="8 2" Width="92">
+                        <TextBlock FontSize="20" LineHeight="17" FontWeight="SemiBold" HorizontalAlignment="Center">PLAY</TextBlock>
+                        <TextBlock FontSize="11" HorizontalAlignment="Center">MULTIPLAYER</TextBlock>
+                    </StackPanel>
+                    <SplitButton.Flyout>
+                        <MenuFlyout Placement="Bottom">
+                            <MenuItem Header="Play without Mods"
+                                      InputGesture="Ctrl+A" />
+                            <MenuItem Header="Open Studio"
+                                      InputGesture="Ctrl+A" />
+                        </MenuFlyout>
+                    </SplitButton.Flyout>
+                </SplitButton>
+            </Panel>
+            
             <!-- Notification Panel -->
-            <Panel Grid.Row="3">
-                <Border Background="rgba(255, 0, 0, 1)"  ClipToBounds="True" BorderThickness="1" BorderBrush="rgba(255, 255, 0, 1)" Padding="4 0 4 4">
-                    <TextBlock LineHeight="10" Padding="0" Margin="0" Height="8" FontSize="11" VerticalAlignment="Bottom" Grid.Row="0" Grid.Column="0">1111</TextBlock>
+            <Panel Height="34" Grid.Row="3" VerticalAlignment="Bottom" Margin="0 16 0 0">
+                <Border Background="rgba(255, 0, 0, 1)" ClipToBounds="True" BorderThickness="1" BorderBrush="rgba(255, 255, 0, 1)" Padding="4">
+                    <Grid ColumnDefinitions="14,1*,14" >
+                        <PathIcon Grid.Row="0" Grid.Column="0" Height="18" Width="18" VerticalAlignment="Center" Data="{StaticResource alert_regular}" />
+                        <TextBlock LineHeight="10" Padding="0" FontSize="14" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="0" Grid.Column="1">Sed porttitor ultricies metus vitae congue. Aenean risus enim, eleifend ut commodo. </TextBlock>
+                        <Button Margin="0" Padding="0" VerticalAlignment="Center" Grid.Row="0" Grid.Column="2" Background="Transparent">
+                            <PathIcon Grid.Column="0" Height="18" Width="18" Data="{StaticResource delete_regular}" />
+                        </Button>
+                    </Grid>
                 </Border>
             </Panel>
             
         </Grid>
+            
+            
         
     </Panel>
     </Panel>

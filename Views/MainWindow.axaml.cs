@@ -1,8 +1,12 @@
 using System.Threading.Tasks;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
+using static TargetVectorLauncher.Views.Home;
 using static TargetVectorLauncher.Views.Preferences;
 using static TargetVectorLauncher.Views.About;
+using static TargetVectorLauncher.Views.News;
+using static TargetVectorLauncher.Views.Community;
+using static TargetVectorLauncher.Views.Downloads;
 
 
 namespace TargetVectorLauncher.Views;
