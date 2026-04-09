@@ -1,0 +1,57 @@
+<Window MinWidth="640" MinHeight="480"
+        xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="640" d:DesignHeight="480"
+        x:Class="TargetVectorLauncher.Views.InteractiveInstallWindow"
+        Title="Updating Application"
+        TransparencyLevelHint="AcrylicBlur"
+        Background="Transparent"
+        ExtendClientAreaToDecorationsHint="True"
+        WindowStartupLocation="CenterOwner"
+        ExtendClientAreaChromeHints="NoChrome"
+        CanResize="True"
+        SizeToContent="WidthAndHeight">
+    <Panel ClipToBounds="True" Margin="0,0,0,0">
+        <ExperimentalAcrylicBorder IsHitTestVisible="False" CornerRadius="8" ClipToBounds="True">
+            <ExperimentalAcrylicBorder.Material>
+                <ExperimentalAcrylicMaterial
+                    BackgroundSource="Digger"
+                    TintColor="Black"
+                    TintOpacity="0.75"
+                    MaterialOpacity="0.05" />
+            </ExperimentalAcrylicBorder.Material>
+        </ExperimentalAcrylicBorder>
+        <StackPanel Spacing="10" HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" Margin="0">
+            <Panel HorizontalAlignment="Stretch">
+                <TextBlock Text="Target Vector Updater" FontSize="11" HorizontalAlignment="Center" Margin="0"/>
+                <Button HorizontalAlignment="Right" Margin="0,3,3,0"  Padding="2,0,2,0" Background="Red"><TextBlock FontSize="11" Foreground="White">X</TextBlock></Button>
+            </Panel>
+            <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="8 0 8 0">
+                <Canvas Margin="0 20"></Canvas>
+                
+                <Panel HorizontalAlignment="Stretch" Margin="0 2 0 4">
+                    <TextBlock Text="Updating..." FontSize="13" FontWeight="DemiBold" />
+                    <TextBlock Text="100%" FontSize="13" HorizontalAlignment="Right" MinWidth="20" FontWeight="DemiBold"/>
+                </Panel>
+                <StackPanel VerticalAlignment="Bottom">
+                    <ProgressBar x:Name="DownloadProgressBar" Margin="0 4 0 1" Foreground="DodgerBlue" Background="#444444" Height="4" Minimum="0" Maximum="100" Value="50"></ProgressBar>
+                    <Panel HorizontalAlignment="Stretch" Margin="0 2 0 4">
+                        <TextBlock ClipToBounds="True" Text="https://downloads.voidwarex.com/TargetNetSparkleUpdater-Download.pak" FontSize="11" HorizontalAlignment="Left" TextTrimming="PrefixCharacterEllipsis" MaxWidth="300"/>
+                        <TextBlock Text="[000/000]" FontSize="11" HorizontalAlignment="Right" MinWidth="20" FontWeight="DemiBold"/>
+                    </Panel>
+                    <ProgressBar x:Name="InstallProgressBar"  Margin="0 2 0 0" Foreground="LimeGreen" Background="#444444" Height="4" Minimum="0" Maximum="100" Value="75"></ProgressBar>
+                    <Panel HorizontalAlignment="Stretch" Margin="0 2 0 0">
+                        <TextBlock ClipToBounds="True" Text="https://downloads.voidwarex.com/TargetNetSparkleUpdater-Download.pak" FontSize="11" HorizontalAlignment="Left" TextTrimming="PrefixCharacterEllipsis" MaxWidth="300"/>
+                        <TextBlock Text="[000/000]" FontSize="11" HorizontalAlignment="Right" MinWidth="20" FontWeight="DemiBold"/>
+                    </Panel>
+                    <Grid>
+                        
+                    </Grid>
+                </StackPanel>
+            </StackPanel>
+            
+        </StackPanel>
+    </Panel>
+</Window>
