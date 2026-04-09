@@ -1,11 +1,15 @@
 using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
+using Avalonia.Threading;
 using Avalonia.Data.Core;
 using Avalonia.Data.Core.Plugins;
 using System.Linq;
 using Avalonia.Markup.Xaml;
 using TargetVectorLauncher.ViewModels;
 using TargetVectorLauncher.Views;
+using System;
+using System.Diagnostics;
+using System.Threading.Tasks;
 
 namespace TargetVectorLauncher;
 
@@ -23,9 +27,13 @@ public partial class App : Application
             // Avoid duplicate validations from both Avalonia and the CommunityToolkit. 
             // More info: https://docs.avaloniaui.net/docs/guides/development-guides/data-validation#manage-validationplugins
             DisableAvaloniaDataAnnotationValidation();
-            desktop.MainWindow = new MainWindow
+            
+            desktop.MainWindow = new LoadingWindow();
+            (desktop.MainWindow as LoadingWindow).CheckForUpdatesAsync();
+            
+            desktop.MainWindow = new LoadingWindow
             {
-                DataContext = new MainWindowViewModel(),
+                DataContext = new LoadingWindowModel(),
             };
         }
 
@@ -44,4 +52,5 @@ public partial class App : Application
             BindingPlugins.DataValidators.Remove(plugin);
         }
     }
+    
 }

@@ -3,6 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="clr-namespace:TargetVectorLauncher.ViewModels"
         mc:Ignorable="d" d:DesignWidth="640" d:DesignHeight="480"
         x:Class="TargetVectorLauncher.Views.LoadingWindow"
         Icon="/Assets/avalonia-logo.ico"
@@ -11,7 +12,8 @@
         Background="Transparent"
         ExtendClientAreaToDecorationsHint="True"
         WindowStartupLocation="CenterOwner"
-        ExtendClientAreaChromeHints="NoChrome">
+        ExtendClientAreaChromeHints="NoChrome"
+        x:DataType="vm:LoadingWindowModel">
     <Panel ClipToBounds="True" HorizontalAlignment="Stretch"  VerticalAlignment="Stretch"  Margin="0,0,0,0">
         <ExperimentalAcrylicBorder IsHitTestVisible="False" CornerRadius="8" ClipToBounds="True">
             <ExperimentalAcrylicBorder.Material>
@@ -48,11 +50,11 @@
                 <TextBlock HorizontalAlignment="Center">
                     Loading
                 </TextBlock>
+                <ProgressBar x:Name="UpdaterProgressBar" IsVisible="{Binding IsProgressVisible}" Margin="10,10"
+                             Minimum="0" Maximum="100" Value="{Binding ProgressValue}"/>
             </StackPanel>
             <Panel Grid.Row="3" VerticalAlignment="Bottom">
-                <TextBlock HorizontalAlignment="Center" FontSize="10">
-                    Loading Detail
-                </TextBlock>
+                <TextBlock x:Name="StatusTextBlock" Text="{Binding StatusText}" HorizontalAlignment="Center" FontSize="10" />
             </Panel>
         </Grid>
     </Panel>
